@@ -1,2 +1,2 @@
 # react_basics
-First steps with React, modern Javascript and testing
+React, modern Javascript and testing

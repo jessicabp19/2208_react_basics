@@ -1,8 +1,6 @@
 //import { Fragment} from 'react'
 import PropTypes from 'prop-types';
 
-//Siempre debemos regresar un nodo padre
-
 //Async func no se renderiza directamente por que devuelve un obj(promesa)
 const getResult = () => { 
     return "Hola! Mundo!"
@@ -24,8 +22,9 @@ export const FirstApp = ( {title, subtitle} ) => {
 
 
     <>
-        <h1>{title}</h1>
-        <h2>{subtitle+1}</h2>
+        <h1 data-testid="test-title">{title}</h1>
+        <h2>{subtitle}</h2>
+        {/* <h2>{subtitle}</h2> */}
         {/* <code>{JSON.stringify(obj)}</code> */}
         {/* <p>{getResult()}</p>     */}
     </>
@@ -34,11 +33,11 @@ export const FirstApp = ( {title, subtitle} ) => {
 
 FirstApp.propTypes = {
     title: PropTypes.string.isRequired,
-    subtitle: PropTypes.number.isRequired
+    subtitle: PropTypes.string.isRequired
 }
 
 FirstApp.defaultProps = {
     name: 'Jessica',
-    title: 'No hay titulo',
+    //title: 'No hay titulo',
     subtitle: 'No hay subtitulo'
 }

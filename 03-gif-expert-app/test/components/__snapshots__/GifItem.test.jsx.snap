@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tests in <GifItem /> Should match snapshot 1`] = `
+<div>
+  <div
+    class="card"
+  >
+    <img
+      alt="Grey's Anatomy"
+      src="https://greysanatomy/serie"
+    />
+    <p>
+       
+      Grey's Anatomy
+       
+    </p>
+  </div>
+</div>
+`;

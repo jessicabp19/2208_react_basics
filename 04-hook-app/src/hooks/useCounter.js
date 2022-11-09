@@ -13,7 +13,7 @@ export const useCounter = (initialValue = 10) => {
     }
 
     const decrement = () => {
-        if ( counter === 0 ) return; //Lógica de negocio
+        if ( counter === 1 ) return; //Lógica de negocio
         setcounter(counter - 1);
     }
 
@@ -21,11 +21,17 @@ export const useCounter = (initialValue = 10) => {
         setcounter(initialValue);
     }
 
+    const set = (value = 1) => {
+        if ( value < 1 || value > 30 ) return;
+        setcounter(value);
+    }
+
 
     return {
         counter, //counter: counter
         increment,
         decrement,
+        set,
         reset
     }
 

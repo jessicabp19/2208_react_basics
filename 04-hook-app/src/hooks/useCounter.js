@@ -8,7 +8,7 @@ export const useCounter = (initialValue = 10) => {
     const [counter, setcounter] = useState(initialValue);
 
     const increment = (value = 1) => {
-        //console.log(value)
+        if ( counter === 30 ) return; //Lógica de negocio
         setcounter(counter + value);
     }
 

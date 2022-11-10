@@ -35,14 +35,16 @@ export const MultipleCustomHooks = () => {
     
         <h1>Breaking Bad Quotes</h1>
 
-        <form onSubmit={ onSubmit }>
+        {/* <form onSubmit={ onSubmit }>
           <input
             type="text"
-            placeholder="Search ID"
+            placeholder="Search ID (1-30)"
             value = { inputValue }
             onChange = { onInputChange }
           />
-        </form>
+        </form> */}
+        
+        <hr />
         
         {
           isLoading

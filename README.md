@@ -1,4 +1,4 @@
-# React from 0 to 100
+# React from basic to 100
 React, modern Javascript and testing
 
 ## Deployments :)

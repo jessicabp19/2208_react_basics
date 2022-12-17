@@ -27,7 +27,10 @@ export const FormWithCustomHook = () => {
             placeholder="Username"
             name="username"
             value={username}
-            onChange={onInputChange} 
+            onChange={(event) => {
+                console.log(event.target)
+                onInputChange(event)
+            }} 
         />
 
         <input 

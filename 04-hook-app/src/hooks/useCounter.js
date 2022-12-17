@@ -9,12 +9,14 @@ export const useCounter = (initialValue = 10) => {
 
     const increment = (value = 1) => {
         if ( counter === 30 ) return; //Lógica de negocio
-        setcounter(counter + value);
+        //setcounter(counter + value);
+        setcounter( (current) => current + value ); //toma el valor real
     }
 
-    const decrement = () => {
+    const decrement = ( value = 1) => {
         if ( counter === 1 ) return; //Lógica de negocio
-        setcounter(counter - 1);
+        //setcounter(counter - 1);
+        setcounter( (current) => current - value);
     }
 
     const reset = () => {

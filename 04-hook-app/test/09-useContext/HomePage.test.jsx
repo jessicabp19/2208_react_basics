@@ -47,9 +47,9 @@ describe('Test <HomePage />', () => {
 
     test('should called setUser when button get clicked', () => { 
     
-        const serUserMock = jest.fn()
+        const setUserMock = jest.fn()
         render(
-            <UserContext.Provider value={{user, setUser: serUserMock }}>
+            <UserContext.Provider value={{user, setUser: setUserMock }}>
                 <HomePage />
             </UserContext.Provider>
         );
@@ -60,8 +60,8 @@ describe('Test <HomePage />', () => {
 
         fireEvent.click( setButton );
 
-        expect( serUserMock ).toHaveBeenCalled();
-        expect( serUserMock ).toHaveBeenCalledWith(user);
+        expect( setUserMock ).toHaveBeenCalled();
+        expect( setUserMock ).toHaveBeenCalledWith(user);
         
     });
 

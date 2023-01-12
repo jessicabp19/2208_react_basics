@@ -7,9 +7,11 @@ export const MultipleCustomHooks = () => {
   
   const { counter, increment, decrement, set } = useCounter(1);
   
-  const { data, isLoading, hasError } = useFetch(`https://www.breakingbadapi.com/api/quotes/${counter}`);
+  const { data, isLoading, hasError } = useFetch(`https://api.breakingbadquotes.xyz/v1/quotes/${counter}`); 
+  //New API: https://github.com/shevabam/breaking-bad-quotes
+  //Previous API: https://www.breakingbadapi.com/api/quotes/
   
-  const { quote, author } = !!data && data[0];
+  //const { quote, author } = !!data && data[0];
   
   // if(isLoading) { //This is an option
   //   return(
@@ -49,19 +51,25 @@ export const MultipleCustomHooks = () => {
         {
           isLoading
           ? <LoadingQuote />
-          : <Quote quote={quote} author={author} />
+          : data.map( (q) => <Quote key={q.quote} quote={q.quote} author={q.author} />) //<Quote quote={quote} author={author} />//
         }
 
         <button className="btn btn-primary" 
           onClick={ () => decrement() }
           disabled={ isLoading }>
-          &#8920; Previous Quote
+          &#8920; Less Quotes
+        </button>
+
+        <button className="btn btn-primary" 
+          onClick={ () => set(1) }
+          disabled={ isLoading }>
+          Reset
         </button>
 
         <button className="btn btn-primary" 
           onClick={ () => increment() }
           disabled={ isLoading }>
-          Next Quote &#8921;
+          More Quotes &#8921;
         </button>
 
 
